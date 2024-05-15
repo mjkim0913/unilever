@@ -22,6 +22,12 @@
     <meta property="twitter:image" content="./images/favicon.png" />
     <meta property="twitter:url" content="https://unilever.co.kr" />
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="icon" href="./images/favicon.png" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -30,9 +36,11 @@
     <!-- HEADER -->
     <header>
       <div class="header_wrap">
-        <a href="/" class="logo">
-          <img src="./images/logo-animated.svg" alt="Unilever logo" />
-        </a>
+        <h1 id="logo">
+          <a href="/" class="logo">
+            <img src="./images/logo-animated.svg" alt="Unilever logo" />
+          </a>
+        </h1>
         <div class="header_nav">
           <ul class="menu">
             <li>
@@ -71,13 +79,195 @@
     </header>
 
     <!-- VISUAL -->
-    <div class="container">
-      <section class="section01">section1</section>
-      <section class="section02">section2</section>
-      <section class="section03">section3</section>
-      <section class="section04">section4</section>
-    </div>
+    <main class="container">
+      <section class="section section01">
+        <div class="wide_section">
+          <div class="relative_box">
+            <h3>"유니레버코리아입니다"</h3>
+          </div>
+          <div class="img_box"></div>
+        </div>
+        section1
+      </section>
+      <section class="section section02">
+        <div class="wide_section">
+          <div class="relative_box">
+            <h3>
+              "유니레버코리아입니다"
+              <em class="block_item">Lead the Way</em>
+            </h3>
+            <a class="btn" href="#" role="button">소개 바로가기</a>
+          </div>
+
+          <ul class="cards">
+            <li class="card1">card1</li>
+            <li class="card2">card2</li>
+            <li class="card3">card3</li>
+            <li class="card4">card4</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section section03">
+        <h3>브랜드 소개</h3>
+        <span class="news1">card1</span>
+        <span class="news2">card2</span>
+        <span class="news3">card3</span>
+        <span class="news4">card4</span>
+        <span class="news5">card5</span>
+      </section>
+      <!-- <section class="section section04">
+        <div class="wide_section">
+          <div class="relative_box">
+            <h3>
+              유니레버코리아의<br />
+              <em class="block_item">다양한 활동과 소식을 만나보세요</em>
+            </h3>
+          </div>
+          <div class="news_cont">
+            <ul class="news_card">
+              <li>
+                <a href="#">
+                  <div class="thumb_box">
+                    <img src="./images/news1.webp" alt="news_img" />
+                  </div>
+                  <div class="box">
+                    <p>넷제로를 향한 여섯가지 방법</p>
+                    <span>2023.10.16</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb_box">
+                    <img src="./images/news1.webp" alt="news_img" />
+                  </div>
+                  <div class="box">
+                    <p>넷제로를 향한 여섯가지 방법</p>
+                    <span>2023.10.16</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div class="thumb_box">
+                    <img src="./images/news1.webp" alt="news_img" />
+                  </div>
+                  <div class="box">
+                    <p>넷제로를 향한 여섯가지 방법</p>
+                    <span>2023.10.16</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section> -->
+    </main>
 
     <footer id="footer" class="footer">footer</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- <script>
+      // use a script tag or an external JS file
+      document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        $(function () {
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: ".cards",
+                start: "top 90%",
+                end: "20% 100%",
+                scrub: 2,
+                markers: true,
+              },
+            })
+            .to(
+              ".cards li:nth-child(1)",
+              { y: "-480px", duration: 1, ease: "none" },
+              0.2
+            )
+            .to(
+              ".cards li:nth-child(2)",
+              { y: "-480px", duration: 1, ease: "none" },
+              0.4
+            );
+        });
+      });
+      //   gsap.to(".cards", {
+      //     ScrollTrigger: ".cards",
+
+      //     rotation: 360,
+      //     duration: 3,
+      //   });
+      // });
+    </script> -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const timeline1 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".cards",
+            start: "top 90%",
+            end: "20% 100%",
+            scrub: 2,
+          },
+        });
+
+        timeline1.to(
+          ".cards li:nth-child(1)",
+          { y: "-100px", duration: 1, ease: "none" },
+          0.2
+        );
+
+        const timeline2 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".cards",
+            start: "top 90%",
+            end: "20% 100%",
+            scrub: 2,
+          },
+        });
+
+        timeline2.to(
+          ".cards li:nth-child(2)",
+          { y: "-100px", duration: 1, ease: "none" },
+          0.4
+        );
+        const timeline3 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".cards",
+            start: "top 90%",
+            end: "20% 100%",
+            scrub: 2,
+          },
+        });
+
+        timeline3.to(
+          ".cards li:nth-child(3)",
+          { y: "-100px", duration: 1, ease: "none" },
+          0.6
+        );
+
+        const timeline4 = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".cards",
+            start: "top 90%",
+            end: "20% 100%",
+            scrub: 2,
+          },
+        });
+
+        timeline4.to(
+          ".cards li:nth-child(4)",
+          { y: "-100px", duration: 1, ease: "none" },
+          0.8
+        );
+      });
+    </script>
   </body>
 </html>
