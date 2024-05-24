@@ -1,0 +1,51 @@
+/* section 3 - BRAND */
+.section03 {
+  position: relative;
+  overflow: hidden;
+}
+
+.section03 span {
+  display: block;
+  width: 250px;
+  height: 350px;
+  background-color: bisque;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section03 span.news1 {
+  transform: translate(-50%, -50%) rotate(-12deg);
+}
+.section03 span.news2 {
+  background-color: aquamarine;
+  transform: translate(-50%, -50%) rotate(12deg);
+}
+.section03 span.news3 {
+  background-color: brown;
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
+.section03 span.news4 {
+  background-color: cornflowerblue;
+  transform: translate(-50%, -50%) rotate(18deg);
+}
+.section03 span.news5 {
+  background-color: chartreuse;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+/* section 4 - NEWS */
+.news_cont {
+  text-align: center;
+  animation: 1.2s movetop ease-out forwards;
+  animation-delay: 0.8s;
+}
+.section04 .wide_section .news_cont ul {
+  margin-bottom: 46px;
+}
+.box {
+  display: block;
+}

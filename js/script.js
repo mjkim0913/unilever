@@ -1,3 +1,5 @@
+// **************************************************
+// ******** Section_03_약속과 책임 스크롤트리커********
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
