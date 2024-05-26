@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: ".cards",
       start: "top 90%",
-      end: "20% 100%",
+      end: "64% 100%",
       scrub: 2,
     },
   });
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTrigger: {
       trigger: ".cards",
       start: "top 90%",
-      end: "40% 100%",
+      end: "64% 100%",
       scrub: 2,
     },
   });
@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
   timeline2.to(
     ".cards li:nth-child(2)",
     { y: "-100px", duration: 2, ease: "none", delay: 3 },
-    0.6
+    0.5
   );
   const timeline3 = gsap.timeline({
     scrollTrigger: {
       trigger: ".cards",
       start: "top 90%",
-      end: "60% 100%",
+      end: "64% 100%",
       scrub: 2,
     },
   });
@@ -44,6 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
   timeline3.to(
     ".cards li:nth-child(3)",
     { y: "-100px", duration: 2, ease: "none", delay: 4 },
-    0.8
+    0.6
   );
 });
