@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -47,12 +47,40 @@
         <h1>
           <a href="#"><img src="./logo-animated.svg" alt="logo" /></a>
         </h1>
-        <nav class="nav_title">
-          <ul>
-            <li><a href="#">회사소개</a></li>
-            <li><a href="#">브랜드</a></li>
-            <li><a href="#">약속과 책임</a></li>
-            <li><a href="#">미디어 소식</a></li>
+        <nav id="gnb" class="nav_title">
+          <ul class="depth1">
+            <li>
+              <a href="#">회사소개 </a>
+              <ul class="depth2">
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">브랜드</a>
+              <ul class="depth2">
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">약속과 책임</a>
+              <ul class="depth2">
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">미디어 소식</a>
+              <ul class="depth2">
+                <li><a href="#">서브메뉴1</a></li>
+                <li><a href="#">서브메뉴2</a></li>
+                <li><a href="#">서브메뉴3</a></li>
+              </ul>
+            </li>
             <li><a href="#">고객문의</a></li>
             <li><a href="#">채용</a></li>
           </ul>
@@ -120,13 +148,17 @@
             data-testid="uol-c-video-player"
             autoplay="true"
           >
-            <source src="960 Compass 10s No Sound.mp4" type="video/mp4" />
+            <source
+              src="960 Compass 10s No Sound.mp4"
+              type="video/mp4"
+              alt="main_video"
+            />
           </video>
 
-          <video
+          <!-- <video
             class="uol-c-video__player"
             style="
-              --video-poster-url: url(&quot;/content-images/92ui5egz/production/32dc573f66de0ef8fcd79c1a40e7ee66a9338360-1920x1080.jpg?w=1600&amp;h=900&amp;fit=crop&amp;auto=format&quot;);
+              --video-poster-url: url('/content-images/92ui5egz/production/32dc573f66de0ef8fcd79c1a40e7ee66a9338360-1920x1080.jpg?w=1600&amp;h=900&amp;fit=crop&amp;auto=format');
               --video-aspect-ratio: 1600 / 900;
             "
             loop=""
@@ -139,8 +171,9 @@
             <source
               src="/files/92ui5egz/production/c2bbd0abe76bc8e969d1038b03cc7d3b69ff06a2.mp4"
               data-testid="uol-c-video-source"
+              alt="main_video"
             />
-          </video>
+          </video> -->
 
           <div class="video-text">
             <h2>We are Unilever</h2>
@@ -150,13 +183,13 @@
       </div>
       <!-- slide -->
       <div class="slide">
-        <ul>
+        <ul class="song">
           <li>slide1</li>
           <li>slide2</li>
           <li>slide3</li>
         </ul>
       </div>
-      <!-- contents -->
+
       <!-- Main -->
       <main class="container">
         <!-- Section 1 -->
@@ -164,10 +197,22 @@
           <div class="wide_section">
             <div class="relative_box">
               <h2>세계를 움직이는 글로벌 생활용품 기업</h2>
+              <span class="sub_title">지속 가능한 청결한 삶을 일상으로 </span>
             </div>
-            <div class="img_box"></div>
+            <div class="img_box">
+              <img src="./images/background.jpg" alt="background_img" />
+            </div>
+            <div class="relative_box second">
+              <h2>우리는 유니레버코리아입니다</h2>
+              <span class="sub_title"
+                >글로벌 유니레버의 일원으로서, 1989년부터 한국 시장에 다양한
+                혁신적인 제품을 제공해왔습니다. <br />우리는 퍼스널 케어, 홈
+                케어, 식품 등 다양한 분야에서 한국 소비자들에게 신뢰받는
+                브랜드로 자리매김하고 있습니다.
+              </span>
+            </div>
+            <a class="btn btn_02" href="#" role="button">소개 바로가기 </a>
           </div>
-          section1
         </section>
         <!-- Section 2 -->
         <section class="section section02">
@@ -175,9 +220,11 @@
             <div class="relative_box">
               <div class="left_box">
                 <h2>
-                  유니레버 코리아는<br />다양한 브랜드를 통하여<br />우리 모두의
-                  더 나은 일상과<br />
-                  더 가치있는 세상을 만들기 위해 노력하고 있습니다.
+                  유니레버 코리아는<br /><em
+                    >다양한 브랜드를 통하여<br />우리 모두의 더 나은 일상과<br />
+                    더 가치있는 세상</em
+                  >을 만들기 위해<br />
+                  노력하고 있습니다.
                 </h2>
                 <a class="btn btn_02" href="#" role="button"
                   >브랜드 제품 보러가기
@@ -186,36 +233,42 @@
               <div class="right_box">
                 <ul class="active_imgaes">
                   <li class="img1">
-                    <img src="./images/dove_bg_img.jpg" />
+                    <img src="./images/dove_bg_img.jpg" alt="brand_dove" />
                   </li>
                   <li class="img2">
-                    <img src="./images/benandjerry.jpg" />
+                    <img
+                      src="./images/benandjerry.jpg"
+                      alt="brand_benandjerry"
+                    />
                   </li>
                   <li class="img3">
-                    <img src="./images/doveman.png" />
+                    <img src="./images/doveman.png" alt="brand_doveman" />
                   </li>
                   <li class="img4">
-                    <img src="./images/ahc.jpg" />
+                    <img src="./images/ahc.jpg" alt="brand_ahc/>
                   </li>
                   <li class="img5">
-                    <img src="./images/dove_bg_img.jpg" />
+                    <img src="./images/dove_bg_img.jpg" alt="brand_dove" />
                   </li>
                 </ul>
                 <ul class="active_imgaes">
                   <li class="img1">
-                    <img src="./images/dove_bg_img.jpg" />
+                    <img src="./images/dove_bg_img.jpg" alt="brand_dove" />
                   </li>
                   <li class="img2">
-                    <img src="./images/benandjerry.jpg" />
+                    <img
+                      src="./images/benandjerry.jpg"
+                      alt="brand_benandjerry"
+                    />
                   </li>
                   <li class="img3">
-                    <img src="./images/doveman.png" />
+                    <img src="./images/doveman.png" alt="brand_doveman" />
                   </li>
                   <li class="img4">
-                    <img src="./images/ahc.jpg" />
+                    <img src="./images/ahc.jpg" alt="brand_ahc" />
                   </li>
                   <li class="img5">
-                    <img src="./images/dove_bg_img.jpg" />
+                    <img src="./images/dove_bg_img.jpg" alt="brand_dove" />
                   </li>
                 </ul>
               </div>
@@ -237,7 +290,10 @@
             <ul class="cards">
               <li class="card1">
                 <div class="thumb_box">
-                  <img src="./images/product_ingredient.jpg" />
+                  <img
+                    src="./images/product_ingredient.jpg"
+                    alt="safe_product"
+                  />
                 </div>
                 <div class="desc_box">
                   <p>안전한 제품, 안심되는 생활</p>
@@ -266,7 +322,7 @@
               </li>
               <li class="card2">
                 <div class="thumb_box">
-                  <img src="./images/researcher.jpg" />
+                  <img src="./images/researcher.jpg" alt="sustainability" />
                 </div>
                 <div class="desc_box">
                   <p>지속 가능한 발전, 우리의 책임</p>
@@ -295,7 +351,7 @@
               </li>
               <li class="card3">
                 <div class="thumb_box">
-                  <img src="./images/researcher2.jpg" />
+                  <img src="./images/researcher2.jpg" alt="technology" />
                 </div>
                 <div class="desc_box">
                   <p>혁신과 연구, 더 나은 내일을 위해</p>
@@ -467,6 +523,22 @@
           </div>
         </div>
       </footer>
+    </div>
+    <!-- Modal -->
+    <div id="layerPop" class="dimmed">
+      <div class="layer_box">
+        <h2>레이어타이틀</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem a
+          eaque magni quo at perferendis vitae voluptates temporibus! Sapiente
+          architecto excepturi quis numquam nobis atque nemo laboriosam autem
+          ut. Eligendi.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Dolorem a eaque magni quo at perferendis vitae voluptates temporibus!
+          Sapiente architecto excepturi quis numquam nobis atque nemo laboriosam
+          autem ut. Eligendi.
+        </p>
+        <button>닫기</button>
+      </div>
     </div>
   </body>
 </html>

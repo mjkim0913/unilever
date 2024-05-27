@@ -2,50 +2,95 @@
 /* Header */
 /* *************************************** */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 1000;
   padding: 0 32px;
-  height: 100px;
+  height: 82px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: transparent;
 }
+header h1 {
+  margin: 0;
+}
 header h1 a img {
-  height: auto;
+  height: 82px;
   width: 100px;
 }
 
-.nav_title {
+#gnb {
   flex-grow: 1; /* Allow the navigation menu to grow and occupy remaining space */
 }
 
-.nav_title ul {
+#gnb .depth1 {
   display: flex;
   justify-content: center; /* Center the navigation menu items */
-  list-style: none;
 }
 
-.nav_title li {
-  margin: 0 20px;
+#gnb .depth1 > li {
   color: #fff;
   font-weight: 700;
+  position: relative;
+}
+#gnb .depth1 > li:hover .depth2 {
+  display: block;
 }
 
-.nav_title li a {
+#gnb .depth1 > li > a {
+  /* a는 inline*/
+  display: block;
+  position: relative;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
   color: #fff;
   font-weight: 500;
 }
-
+#gnb .depth1 > li:hover > a {
+  color: #1f36c7;
+  font-weight: 700;
+}
+/* 메뉴 hover시, 밑줄 */
+/* content는 inline이라 block으로 설정 */
+/* #gnb .depth1 > li:hover::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  color: #000;
+} */
+.depth2 {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  width: 100%;
+}
+.depth2 li a {
+  display: block;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+}
+.depth2 li:hover a {
+  color: #1f36c7;
+}
 .header_icons {
   display: flex;
   align-items: flex-start;
   gap: 10px;
 }
-
 .header_icons button {
   display: flex;
   align-items: center;
@@ -68,7 +113,7 @@ header h1 a img {
 }
 .video-text {
   position: absolute;
-  top: 60%;
+  bottom: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -81,8 +126,15 @@ header h1 a img {
 /* slide */
 .slide {
   background-color: lightblue;
+  position: relative;
+  height: 300px;
+  /* 고정 높이값을 넣어줘야함 기본이 0이기때문 */
+  overflow: hidden;
 }
 .slide ul {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   width: 300%;
 }
@@ -108,7 +160,26 @@ header h1 a img {
 }
 
 /* ******* Section 1 - 회사 소개 ************** */
+.section01 {
+  margin: 0 auto;
+  height: 100%;
+}
+.section01 .wide_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  gap: 104px;
+}
+.section01 .wide_section a {
+  margin: 0;
+}
 /* ******* Section 2 - 브랜드 ************** */
+.container .section02 {
+  background-color: #f5f5f5;
+}
 .section02 {
   margin: 0 auto;
   height: 100%;
@@ -117,16 +188,25 @@ header h1 a img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 1920px;
   gap: 104px;
 }
 .section02 .wide_section .relative_box {
   margin: 0 auto;
   height: 860px;
   /* padding: 0 90px; */
-  max-width: 1476px;
+  max-width: 100%;
   overflow: hidden;
   margin-bottom: 104px;
+}
+.section02 .wide_section .relative_box h2 {
+  color: #aaa;
+  font-size: 48px;
+  line-height: 60px;
+  letter-spacing: -0.2px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 .section02 .wide_section .left_box {
   padding: 194px 0;
@@ -134,7 +214,8 @@ header h1 a img {
   float: left;
   overflow: hidden;
 }
-.section02 .wide_section .left_box a {
+.section02 .wide_section .left_box a,
+.section01 .wide_section a {
   background-color: #222;
   color: #fff;
   font-size: 16px;
@@ -369,4 +450,54 @@ footer div {
 }
 .footer_top ul {
   font-weight: 700;
+}
+
+/* modal */
+.dimmed {
+  /* fixed도 기준가능 */
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.layer_box {
+  display: flex;
+  flex-direction: column;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin: -150px 0 0 -250px; */
+  height: 300px;
+  width: 500px;
+  background-color: #fff;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.layer_box h2 {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+}
+.layer_box p {
+  font-size: 16px;
+  color: #444;
+  flex: 1;
+  /* p 내용이 일단 자리 차지하고 나머지 애들이 공간 가져감 */
+  overflow: auto;
+  max-height: 110px;
+}
+
+.layer_box button {
+  background-color: #000;
+  width: 100px;
+  height: 40px;
+  margin: 0 auto;
+  color: #fff;
+  cursor: pointer;
 }
