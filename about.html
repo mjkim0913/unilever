@@ -22,6 +22,10 @@
     <meta property="twitter:url" content="https://unilever.co.kr" />
 
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -34,14 +38,12 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/main.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="./js/swiper.js"></script>
     <script defer src="./js/script.js"></script>
   </head>
   <body>
@@ -53,13 +55,13 @@
             ><img src="./images/logo-animated.svg" alt="logo"
           /></a>
         </h1>
-        <nav id="gnb">
+        <nav id="gnb" class="nav_title">
           <ul class="depth1 gnb_ver2">
             <li>
               <a href="about.html">회사소개 </a>
             </li>
             <li>
-              <a href="#">브랜드</a>
+              <a href="./brand_swiper.html">브랜드</a>
               <ul class="depth2">
                 <li><a href="#">뷰티</a></li>
                 <li><a href="#">퍼스널케어</a></li>
@@ -139,47 +141,123 @@
           </button>
         </div>
       </header>
-      <section class="section section_brand">
-        <div class="wide_section">
-          <h2>유니레버 코리아의 브랜드</h2>
-          <!-- Swiper -->
-          <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
+
+      <!-- Main -->
+      <main class="section_container">
+        <div class="cInnerContent">
+          <h2 class="header-section gs_reveal ipsType_center">
+            유니레버의 이야기
+          </h2>
+
+          <div class="features">
+            <div
+              class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+            >
+              <div
+                class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
+              >
+                <div class="card">
+                  <img width="479" src="./images/world_people.png" alt="" />
+                </div>
               </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
-              </div>
-              <div class="swiper-slide">
-                <img src="./images/background.jpg" alt="img" />
+
+              <div class="ipsGrid_span7 ipsType_left">
+                <h2 class="heading_large gs_reveal">
+                  우리는 매일 전 세계 190개국, 34억명의 사람들과 함께합니다.
+                </h2>
+                <p class="gs_reveal">
+                  매일 전 세계 190개국, 약 34억 이상의 사람들이 유니레버 제품을
+                  사용하고 있습니다.
+                </p>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
+
+            <div
+              class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+            >
+              <div class="ipsGrid_span7 ipsType_right">
+                <h2 class="heading_large gs_reveal">
+                  우리는 전 세계 128,000명의 유능한 인재들과 함께합니다.
+                </h2>
+                <p class="gs_reveal">
+                  전 세계에 걸쳐 소비자와 지역 사회의 삶의 긍정적인 변화를
+                  주도하며 수십억 명의 사람들에게 서비스를 제공합니다.
+                </p>
+              </div>
+
+              <div
+                class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
+              >
+                <div class="card">
+                  <img
+                    width="479"
+                    src="./images/unilever_workers.webp"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+            >
+              <div
+                class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
+              >
+                <div class="card">
+                  <img width="479" src="./images/sustainability.png" alt="" />
+                </div>
+              </div>
+
+              <div class="ipsGrid_span7 ipsType_left">
+                <h2 class="heading_large gs_reveal">
+                  우리는 지속 가능 경영에 힘쓰고 있습니다.
+                </h2>
+                <p class="gs_reveal">
+                  지난 20여년간 지속가능경영을 추진해오고 있습니다. 탄소 방출
+                  영향을 2030년까지 2010년 대비 절반으로 줄이고 당사의 가치사슬
+                  전반에서 2039년까지 넷제로를 목표로 합니다.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+            >
+              <div class="ipsGrid_span7 ipsType_right">
+                <h2 class="heading_large gs_reveal">
+                  우리는 지속적인 연구개발을 합니다.
+                </h2>
+                <p class="gs_reveal">
+                  2023년 한 해동안 총 949만유로의 비용을 제품 연구 개발에
+                  투자했으며, <br />현재까지 20,000여개 이상의 특허권을 가지고
+                  있습니다.
+                </p>
+              </div>
+
+              <div
+                class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
+              >
+                <div class="card">
+                  <img width="479" src="./images/researcher.jpg" alt="" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+
+        <!-- <header>
+          <a href="https://greensock.com/scrolltrigger">
+            <img
+              class="greensock-icon"
+              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg"
+              width="200"
+              height="64"
+            />
+          </a>
+        </header> -->
+      </main>
+
       <!-- footer -->
       <footer>
         <div class="footer_wrap">
