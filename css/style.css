@@ -26,7 +26,8 @@ header h1 a img {
   flex-grow: 1; /* Allow the navigation menu to grow and occupy remaining space */
 }
 
-#gnb .depth1 {
+#gnb .depth1,
+#gnb .gnb_brand {
   display: flex;
   justify-content: center; /* Center the navigation menu items */
 }
@@ -36,7 +37,13 @@ header h1 a img {
   font-weight: 700;
   position: relative;
 }
-#gnb .depth1 > li:hover .depth2 {
+#gnb .gnb_brand > li {
+  color: #000;
+  font-weight: 700;
+  position: relative;
+}
+#gnb .depth1 > li:hover .depth2,
+#gnb .gnb_brand > li:hover .depth2 {
   display: block;
 }
 
@@ -51,8 +58,22 @@ header h1 a img {
   color: #fff;
   font-weight: 500;
 }
+#gnb .gnb_brand > li > a {
+  display: block;
+  position: relative;
+  height: 82px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #000;
+  font-weight: 500;
+}
 #gnb .depth1 > li:hover > a {
-  color: #1f36c7;
+  color: #1e1e1e;
+  font-weight: 700;
+}
+#gnb .gnb_brand > li:hover > a {
+  color: #868686;
   font-weight: 700;
 }
 /* 메뉴 hover시, 밑줄 */
@@ -84,7 +105,7 @@ header h1 a img {
   text-align: center;
 }
 .depth2 li:hover a {
-  color: #1f36c7;
+  color: #1e1e1e;
 }
 .header_icons {
   display: flex;
@@ -103,14 +124,22 @@ header h1 a img {
   height: 24px;
   stroke: #fff;
 }
+.icons_brand button svg {
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+}
 /* *************************************** */
 /* Video */
 /* *************************************** */
 .video {
-  margin: 0 auto;
   filter: brightness(90%);
   position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
+
 .video-text {
   position: absolute;
   bottom: 20%;
@@ -144,6 +173,35 @@ header h1 a img {
 }
 
 /* *************************************** */
+/* Swiper */
+/* *************************************** */
+.swiper {
+  width: 100%;
+  height: 400px;
+  /* top, right, bottom, left ; */
+  padding: 0 90px;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 90px; */
+  width: 403px;
+  height: 194px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* *************************************** */
 /* Main Section */
 /* *************************************** */
 
@@ -154,17 +212,24 @@ header h1 a img {
   align-items: center;
   width: 100%;
   height: auto;
-  padding: 50px 0;
+  padding: 0 90px;
   border-bottom: 1px solid #1e1e1e;
   margin: 0 auto;
 }
-
+.wide_section {
+  padding: 90px 0;
+}
+.section_brand {
+  margin: 0 auto;
+  height: 100%;
+}
 /* ******* Section 1 - 회사 소개 ************** */
 .section01 {
   margin: 0 auto;
   height: 100%;
 }
-.section01 .wide_section {
+.section01 .wide_section,
+.section_brand .wide_section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -173,11 +238,14 @@ header h1 a img {
   width: 100%;
   gap: 104px;
 }
+.section_brand .wide_section {
+  padding: 195px 0 0 0;
+}
 .section01 .wide_section a {
   margin: 0;
 }
 /* ******* Section 2 - 브랜드 ************** */
-.container .section02 {
+.section_container .section02 {
   background-color: #f5f5f5;
 }
 .section02 {
@@ -188,7 +256,7 @@ header h1 a img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1920px;
+  max-width: 1920px;
   gap: 104px;
 }
 .section02 .wide_section .relative_box {
@@ -274,6 +342,7 @@ header h1 a img {
   margin-bottom: 56px;
   display: flex;
   flex-direction: column;
+  padding: 60px 0;
 }
 
 .section03 .wide_section ul {
@@ -289,7 +358,7 @@ header h1 a img {
   flex-grow: 1;
   flex-basis: 0;
   flex-shrink: 1;
-  height: 650px;
+  height: 800px;
   border-radius: 10px;
 }
 .section03 .wide_section ul li p {

@@ -9,9 +9,10 @@
   letter-spacing: -0.5px;
   font-size: 16px;
   font-family: Pretendard, Roboto;
-  /* overflow-x: hidden;  */
 }
-
+body {
+  overflow-x: hidden;
+}
 img {
   display: block;
 }
@@ -95,4 +96,10 @@ em {
   height: 100%;
   margin: 0 auto;
   /* block요소, 나 자신 가운데 정렬 */
+}
+.brand {
+  background-color: #e9ebf9;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
 }
