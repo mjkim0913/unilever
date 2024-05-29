@@ -434,6 +434,7 @@ section .section01 {
 /* ******* Section 4 - 뉴스 ********* */
 .section04 {
   margin: 0 auto;
+  position: relative;
 }
 .section04 .wide_section {
   display: flex;
@@ -442,14 +443,15 @@ section .section01 {
   align-items: center;
   width: 100%;
   gap: 104px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1260px;
 }
 
 .section04 .wide_section .relative_box {
   margin: 0 auto;
-  width: 100%;
   max-width: 1476px;
   text-align: center;
-  margin-bottom: 104px;
   display: flex;
   flex-direction: column;
 }
@@ -471,9 +473,9 @@ section .section01 {
   border-radius: 10px;
 }
 .section04 .wide_section ul li p {
-  font-size: 24px;
-  line-height: 36px;
-  letter-spacing: -2px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
   font-weight: 700;
 }
 .section04 .wide_section ul li span {
@@ -691,4 +693,102 @@ footer div {
   opacity: 0;
   visibility: hidden;
   will-change: transform, opacity;
+}
+
+.news__tab-list {
+  text-align: center;
+  /* margin-bottom: 64rem; */
+}
+.news__tab-list-inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 100px;
+  background-color: #0e185a;
+  color: #fff;
+  width: 100%;
+}
+.news__tab-train {
+  display: block;
+  position: absolute;
+  top: 8rem;
+  bottom: 8rem;
+  left: 8rem;
+  min-width: 134rem;
+  background: #fff;
+  border-radius: 100px;
+}
+.news__tab-list a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* min-width: 552px; */
+  text-align: center;
+  padding: 8px 24px;
+  transition: color 0.3s, opacity 0.3s;
+  border-radius: 90px;
+}
+.jt-typo--06 {
+  color: #fff;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+}
+.news__tab-list a.news--active {
+  background-color: #fff;
+}
+.news__tab-list a.news--active span {
+  color: #000;
+}
+
+.notice_banner {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  animation: 1.2s movetop ease-out forwards;
+  animation-delay: 1.2s;
+}
+.notice_item {
+  display: inline-block;
+  width: calc(50% - 16px);
+  height: 100%;
+  border-radius: 12px;
+  padding: 38.5px 28px 40px 20px;
+  position: relative;
+  background: #117ce9;
+}
+.notice_item p {
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -1px;
+  margin: 0;
+}
+.section04 .wide_section .notice_banner .notice_item:nth-child(2) {
+  margin: 0;
+  background: #00d7c4;
+}
+.notice_item a {
+  margin: 0;
+  position: absolute;
+  bottom: 21px;
+  right: 32px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -1px;
+  padding: 0 33px;
+  background-color: #1e1e1e;
+  color: #fff;
+  transition: 0.3s;
+}
+.notice_item a:hover {
+  background-color: #fff;
+  color: #1e1e1e;
 }
