@@ -1,5 +1,33 @@
 // **************************************************
-// ******** Section_03_약속과 책임 스크롤트리커********
+// ******** Section_01_회사소개 이미지 스케일 스크롤트리커********
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  ease: "none",
+});
+
+tl.from(".img_box img", {
+  scale: 0.4,
+  duration: 5,
+  transformOrigin: "bottom center",
+}).to(
+  {},
+  {
+    duration: 1,
+  }
+);
+ScrollTrigger.create({
+  trigger: ".img_box",
+  start: "top top",
+  end: "bottom bottom",
+  pin: ".img_box",
+  animation: tl,
+  scrub: 0.78,
+  pinSpacing: false,
+});
+
+// **************************************************
+// ******** Section_03_약속과 책임 스크롤트리거********
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -103,13 +131,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// brand swiper
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  freeMode: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+// Brand swiper
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".brandSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    freeMode: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 });
