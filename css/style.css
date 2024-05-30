@@ -229,6 +229,7 @@ header h1 a img {
 }
 /* ******* Section 1 - 회사 소개 ************** */
 section .section01 {
+  position: relative;
   margin: 0 auto;
   height: 100%;
 }
@@ -244,8 +245,8 @@ section .section01 {
 }
 .section_brand .wide_section {
   padding: 195px 0 0 0;
-  /* width: 100vw;
-  z-index: 1; */
+}
+section .wide_section .relative_box {
 }
 .section01 .wide_section a {
   margin: 0;
@@ -261,6 +262,7 @@ section .section01 {
   object-fit: cover;
   margin: 0 auto;
 }
+
 /* .section01 .wide_section .relative_box,
 .section01 .wide_section .btn {
   z-index: 3;
@@ -431,6 +433,11 @@ section .section01 {
   border: #444 1px solid;
   color: #444;
 }
+.section03 .wide_section ul li a:hover {
+  background-color: #f5f5f5;
+  color: #000;
+  border: #f5f5f5 1px solid;
+}
 /* ******* Section 4 - 뉴스 ********* */
 .section04 {
   margin: 0 auto;
@@ -484,29 +491,31 @@ section .section01 {
   letter-spacing: -1px;
   font-weight: 500;
 }
-.section04 .wide_section ul .thumb_box {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-}
+.section04 .wide_section ul .thumb_box,
 .section04 .wide_section ul .thumb_box img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+}
+.section04 .wide_section ul .thumb_box {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.section04 .wide_section ul .thumb_box img {
   position: absolute;
   object-fit: cover;
   transition: scale 400ms;
 }
 
-.section04 .wide_section ul .thumb_box:hover img {
-  scale: 103%;
+.section04 .wide_section ul li a:hover .thumb_box img {
+  scale: 110%;
+}
+.section04 .wide_section ul li a:hover .desc_box p {
+  color: #005eff;
 }
 .section04 .wide_section ul .desc_box p {
   margin-top: 20px;
-}
-.section04 .wide_section ul .desc_box p:hover {
-  color: #005eff;
 }
 .section04 .wide_section ul .desc_box span {
   margin-top: 12px;
@@ -514,6 +523,11 @@ section .section01 {
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
+}
+.section04 .wide_section a.btn:hover {
+  background-color: #f5f5f5;
+  color: #000;
+  border: #f5f5f5 1px solid;
 }
 span .sub_title {
   color: #1e1e1e;
@@ -613,7 +627,16 @@ footer div {
 }
 
 /* about */
-
+.about {
+  display: block;
+  color: #1e1e1e;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: -0.5px;
+  font-style: normal;
+  text-align: left;
+  margin-bottom: 16px;
+}
 .ipsType_right {
   text-align: right;
 }
@@ -688,13 +711,17 @@ footer div {
 .header-section {
   margin: 200px auto;
 }
-
+.heading_large {
+  font-size: 24px;
+  line-height: 140%;
+}
 .gs_reveal {
   opacity: 0;
   visibility: hidden;
   will-change: transform, opacity;
 }
 
+/* News Tab */
 .news__tab-list {
   text-align: center;
   /* margin-bottom: 64rem; */
@@ -792,3 +819,5 @@ footer div {
   background-color: #fff;
   color: #1e1e1e;
 }
+
+/* brand */
